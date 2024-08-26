@@ -22,3 +22,44 @@ python -m spacy download en_core_web_sm
 
 Step 5: Restart the Kernel
 After performing these updates, restart your Jupyter notebook kernel to ensure that the changes take effect.
+
+## Sentimental analysis output
+
+Here's what each of these statistics indicates:
+
+Understanding Sentiment Scores
+Sentiment scores typically range from -1 to 1, where:
+-1 represents very negative sentiment.
+0 represents neutral sentiment.
+1 represents very positive sentiment.
+Descriptive Statistics Breakdown
+count: 1.407328e+06
+
+This indicates that there are 1,407,328 sentiment scores in your dataset. In other words, sentiment analysis was performed on 1,407,328 headlines.
+mean: 4.905657e-02
+
+The mean sentiment score is approximately 0.049, which is slightly positive. This suggests that, on average, the headlines have a mildly positive sentiment.
+std: 1.830652e-01
+
+The standard deviation is approximately 0.183. This indicates that there is some variability in the sentiment scores, but most scores are relatively close to the mean.
+min: -1.000000e+00
+
+The minimum sentiment score is -1.0, which indicates that there are headlines with very negative sentiment in your dataset.
+25% (1st quartile): 0.000000e+00
+
+The 25th percentile is 0.0, meaning that 25% of the headlines have a sentiment score of 0 or lower. This suggests that at least a quarter of the headlines are neutral or have negative sentiment.
+50% (median): 0.000000e+00
+
+The median sentiment score is 0.0. This indicates that half of the headlines have a sentiment score of 0 or less, suggesting a significant portion of neutral or negative sentiment.
+75% (3rd quartile): 0.000000e+00
+
+The 75th percentile is also 0.0, meaning that 75% of the headlines have a sentiment score of 0 or lower. This further emphasizes the prevalence of neutral sentiment in your dataset.
+max: 1.000000e+00
+
+The maximum sentiment score is 1.0, indicating that there are headlines with very positive sentiment in your dataset.
+Interpretation
+Skewed Distribution: The fact that the mean is positive, but both the median and 75th percentile are 0.0, suggests that the distribution of sentiment scores is skewed. A small proportion of the headlines likely have a positive sentiment, which raises the mean, while a large proportion are neutral.
+Dominance of Neutral Sentiment: The 25th, 50th, and 75th percentiles being 0.0 indicates that neutral sentiment is very common in your dataset.
+Presence of Extremes: The minimum and maximum values of -1.0 and 1.0 show that there are headlines with extreme sentiments, both very negative and very positive.
+This analysis suggests that while most headlines in your dataset are neutral, there are still a range of sentiments present, with a small number of headlines having strong positive or negative sentiments.
+
