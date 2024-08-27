@@ -1,9 +1,6 @@
 from textblob import TextBlob
 import nltk
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from gensim import corpora
-from gensim.models import LdaModel
 from collections import Counter
 
 nltk.download('punkt')
@@ -38,3 +35,13 @@ def common_keywords(df, num_common):
     common_keywords = keyword_freq.most_common(num_common)  # Get the top `num_common` most common keywords
     
     return common_keywords
+
+def classify_sentiment(headline):
+    analysis = TextBlob(headline)
+    if analysis.sentiment.polarity > 0:
+        return 'positive'
+    elif analysis.sentiment.polarity < 0:
+        return 'negative'
+    else:
+        return 'neutral'
+
