@@ -4,6 +4,10 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from gensim import corpora
 from gensim.models import LdaModel
+from collections import Counter
+
+nltk.download('punkt')
+nltk.download('stopwords')
 
 
 def headline_length(df, column_name='headline'):
@@ -13,3 +17,24 @@ def headline_length(df, column_name='headline'):
 def sentiment_analysis(df):
     df['sentiment'] = df['headline'].apply(lambda x: TextBlob(x).sentiment.polarity)
     return df['sentiment'].describe()
+
+def common_keywords(df, num_common):
+    # Initialize the stop words
+    stop_words = set(stopwords.words('english'))
+    
+    # Initialize an empty list to hold all keywords
+    keywords = []
+    
+    # Tokenize, clean, and collect keywords from each headline
+    for headline in df['headline']:
+        from nltk.tokenize import RegexpTokenizer
+        tokenizer = RegexpTokenizer(r'\w+')
+        words = tokenizer.tokenize(headline.lower())
+        words = [word for word in words if word.isalnum() and word not in stop_words]  # Remove stopwords and non-alphanumeric characters
+        keywords.extend(words)
+    
+    # Frequency analysis to identify common keywords
+    keyword_freq = Counter(keywords)
+    common_keywords = keyword_freq.most_common(num_common)  # Get the top `num_common` most common keywords
+    
+    return common_keywords

@@ -8,4 +8,5 @@ wordcloud
 textblob
 spacy
 gensim
+collections
 ipykernel
