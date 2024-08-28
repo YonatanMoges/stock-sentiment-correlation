@@ -9,4 +9,5 @@ textblob
 spacy
 gensim
 collections
+talib
 ipykernel
