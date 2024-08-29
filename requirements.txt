@@ -10,4 +10,8 @@ spacy
 gensim
 collections
 talib
+pynance
+plotly
+pyfolio-reloaded
+zipline-reloadedq
 ipykernel

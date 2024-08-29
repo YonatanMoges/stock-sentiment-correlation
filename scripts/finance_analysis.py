@@ -3,6 +3,7 @@ import talib as ta
 import pynance as pn
 import numpy as np
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 def load_data(file_path):
     df = pd.read_csv(file_path, parse_dates=['date'])
@@ -68,3 +69,5 @@ def plot_data(df):
     plt.ylabel('MACD')
     plt.legend()
     plt.show()
+
+
