@@ -1,34 +1,37 @@
-# Correlation Analysis between Stock Returns and News Sentiment
+# Stock Sentiment Correlation
+
+**Analyzing the correlation between financial news sentiment and daily stock returns for major tech companies.**
 
 ## Author
 Yonatan Moges
 
 ## Overview
-This project explores the relationship between daily stock returns and news sentiment for seven major technology stocks: **AAPL**, **AMZN**, **GOOG**, **META**, **MSFT**, **NVDA**, and **TSLA**. The analysis aims to determine whether news sentiment has any significant linear correlation with stock performance.
+This project investigates the relationship between daily stock returns and financial news sentiment for seven major technology stocks: **AAPL**, **AMZN**, **GOOG**, **META**, **MSFT**, **NVDA**, and **TSLA**. The goal is to assess whether news sentiment scores have a measurable impact on short-term stock performance using correlation analysis.
 
 ## Project Structure
-- `data/`: Contains the historical stock prices and news sentiment datasets.
-- `notebooks/`: Jupyter notebooks for data loading, analysis, and visualization.
-- `scripts/`: Python scripts used for data preprocessing and correlation computation.
+- `data/`: Historical stock prices and sentiment datasets.
+- `notebooks/`: Jupyter notebooks for analysis and visualization.
+- `scripts/`: Code for data processing and computations.
 
 ## Objectives
-- Load and preprocess historical stock price and news sentiment data.
-- Calculate daily stock returns.
-- Perform sentiment analysis on news articles.
-- Compute the Pearson correlation coefficient between stock returns and sentiment scores.
+- Load and preprocess stock and sentiment data.
+- Compute daily stock returns.
+- Aggregate daily news sentiment.
+- Calculate Pearson correlation coefficients between returns and sentiment.
 
 ## Data Sources
-- **Stock Data**: Historical price data for the selected companies.
-- **News Data**: Sentiment scores derived from a corpus of financial news articles provided by 10 Academy.
+- **Stock Data**: Historical prices for selected tech stocks.
+- **News Sentiment**: Labeled sentiment scores from a dataset provided by 10 Academy.
 
 ## Methodology
-1. **Data Loading & Cleaning**
-   - Convert date columns to datetime format.
-   - Align stock and news data to the same date range.
+1. **Preprocessing**
+   - Convert date columns to `datetime` objects.
+   - Align dataframes based on date ranges.
+
 2. **Analysis**
-   - Compute daily stock returns.
-   - Aggregate average daily sentiment scores.
-   - Calculate Pearson correlation coefficients for each stock.
+   - Calculate daily returns for each stock.
+   - Aggregate sentiment scores by day.
+   - Use Pearson correlation to assess relationships.
 
 ## Results
 
@@ -42,27 +45,27 @@ This project explores the relationship between daily stock returns and news sent
 | NVDA   | 0.034       |
 | TSLA   | 0.060       |
 
-- All correlations are weak and positive, suggesting minimal influence of sentiment on returns.
+- All results show **weak positive correlations**, suggesting that news sentiment has limited predictive power for daily stock returns.
 
 ## Interpretation
-- The weak correlations imply that daily news sentiment, as captured in this dataset, has limited predictive power for daily stock returns.
-- This could be due to market complexity, sentiment analysis limitations, or external economic factors.
+- The sentiment scores do not strongly correlate with next-day stock movements.
+- Market dynamics may be influenced more heavily by macroeconomic events, investor behavior, and other financial metrics.
 
 ## Future Work
-- Implement more advanced NLP techniques for better sentiment scoring.
-- Extend analysis to different sectors or a broader range of stocks.
-- Incorporate additional financial indicators (e.g., volume, volatility).
-- Conduct a longitudinal study over a longer time period.
+- Improve sentiment scoring using advanced NLP techniques (e.g., transformer-based models).
+- Expand the dataset with more companies or sectors.
+- Incorporate additional features (e.g., trading volume, volatility).
+- Run experiments over longer time periods to explore long-term patterns.
 
 ## How to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YonatanMoges/financial-news-dataset.git
-   cd financial-news-dataset
+   git clone https://github.com/YonatanMoges/stock-sentiment-correlation.git
+   cd stock-sentiment-correlation
    ```
 2. Set up a Python environment and install dependencies:
-  ```bash
-  pip install -r requirements.txt
-  ```
+   ```bash
+   pip install -r requirements.txt
+   ```
 3. Run the Jupyter notebooks in the notebooks/ directory to replicate the analysis.
    
